@@ -1,0 +1,241 @@
+const employees = [
+  {
+    id: 1,
+    firstName: "Aarav",
+    email: "john.doe@example.com",
+    password: "123",
+    tasks: [
+      {
+        title: "Design the homepage",
+        description: "Create a mockup for the new homepage layout.",
+        date: "2024-10-01",
+        category: "Design",
+        active: true,
+        newTask: false,
+        completed: false,
+        failed: false,
+      },
+      {
+        title: "Write blog post",
+        description: "Draft a blog post on the benefits of React.",
+        date: "2024-10-05",
+        category: "Content",
+        active: true,
+        newTask: false,
+        completed: false,
+        failed: false,
+      },
+      {
+        title: "Update portfolio",
+        description: "Add new projects to the online portfolio.",
+        date: "2024-10-10",
+        category: "Personal",
+        active: false,
+        newTask: false,
+        completed: false,
+        failed: true,
+      },
+    ],
+    taskStats: {
+      active: 2,
+      completed: 3,
+      failed: 0,
+      new: 1,
+    },
+  },
+  {
+    id: 2,
+    firstName: "Vivaan",
+    email: "jane.smith@example.com",
+    password: "123",
+    tasks: [
+      {
+        title: "Develop login page",
+        description: "Implement the login functionality for the website.",
+        date: "2024-10-02",
+        category: "Development",
+        active: true,
+        newTask: false,
+        completed: false,
+        failed: false,
+      },
+      {
+        title: "Test API endpoints",
+        description: "Ensure all API endpoints return the expected data.",
+        date: "2024-10-07",
+        category: "Testing",
+        active: false,
+        newTask: false,
+        completed: true,
+        failed: false,
+      },
+      {
+        title: "Fix bugs in dashboard",
+        description: "Address reported bugs in the user dashboard.",
+        date: "2024-10-12",
+        category: "Maintenance",
+        active: false,
+        newTask: false,
+        completed: false,
+        failed: true,
+      },
+    ],
+    taskStats: {
+      active: 2,
+      completed: 7,
+      failed: 1,
+      new: 0,
+    },
+  },
+  {
+    id: 3,
+    firstName: "Reyansh",
+    email: "sam.wilson@example.com",
+    password: "123",
+    tasks: [
+      {
+        title: "Create wireframes",
+        description: "Develop wireframes for the new project.",
+        date: "2024-10-03",
+        category: "Design",
+        active: true,
+        newTask: false,
+        completed: false,
+        failed: false,
+      },
+      {
+        title: "Prepare presentation",
+        description: "Create slides for the upcoming project meeting.",
+        date: "2024-10-08",
+        category: "Presentation",
+        active: false,
+        newTask: false,
+        completed: false,
+        failed: true,
+      },
+      {
+        title: "Conduct user testing",
+        description: "Gather user feedback on the prototype.",
+        date: "2024-10-15",
+        category: "Testing",
+        active: false,
+        newTask: false,
+        completed: true,
+        failed: false,
+      },
+    ],
+    taskStats: {
+      active: 2,
+      completed: 1,
+      failed: 1,
+      new: 1,
+    },
+  },
+  {
+    id: 4,
+    firstName: "Anaya",
+    email: "emma.jones@example.com",
+    password: "123",
+    tasks: [
+      {
+        title: "Set up project repository",
+        description: "Create a repository for the new project on GitHub.",
+        date: "2024-10-04",
+        category: "Development",
+        active: false,
+        newTask: true,
+        completed: false,
+        failed: false,
+      },
+      {
+        title: "Review code",
+        description: "Check code for the new feature implemented by the team.",
+        date: "2024-10-09",
+        category: "Review",
+        active: true,
+        newTask: false,
+        completed: false,
+        failed: false,
+      },
+      {
+        title: "Update documentation",
+        description: "Ensure the project documentation is up to date.",
+        date: "2024-10-14",
+        category: "Documentation",
+        active: false,
+        newTask: false,
+        completed: true,
+        failed: false,
+      },
+    ],
+    taskStats: {
+      active: 1,
+      completed: 3,
+      failed: 1,
+      new: 2,
+    },
+  },
+  {
+    id: 5,
+    firstName: "Saanvi",
+    email: "david.lee@example.com",
+    password: "123",
+    tasks: [
+      {
+        title: "Conduct team meeting",
+        description: "Lead the weekly team meeting to discuss progress.",
+        date: "2024-10-06",
+        category: "Management",
+        active: true,
+        newTask: false,
+        completed: false,
+        failed: false,
+      },
+      {
+        title: "Submit project report",
+        description: "Prepare and submit the project progress report.",
+        date: "2024-10-11",
+        category: "Reporting",
+        active: false,
+        newTask: false,
+        completed: true,
+        failed: false,
+      },
+      {
+        title: "Arrange team outing",
+        description: "Plan a team outing for team bonding.",
+        date: "2024-10-16",
+        category: "Event",
+        active: false,
+        newTask: false,
+        completed: false,
+        failed: true,
+      },
+    ],
+    taskStats: {
+      active: 2,
+      completed: 10,
+      failed: 0,
+      new: 1,
+    },
+  },
+];
+
+const admin = [
+  {
+    id: 1,
+    email: "admin@example.com",
+    password: "admin123",
+  },
+];
+
+export const setLocalStorage = () => {
+  localStorage.setItem("employees", JSON.stringify(employees));
+  localStorage.setItem("admin", JSON.stringify(admin));
+};
+export const getLocalStorage = () => {
+  const employees = JSON.parse(localStorage.getItem("employees"));
+  const admin = JSON.parse(localStorage.getItem("admin"));
+
+  return { employees, admin };
+};
